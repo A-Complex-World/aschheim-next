@@ -1,13 +1,9 @@
 import React from "react";
 
 export function LineReveal({
-  children,
-  className = "",
-  delay = 0,
+  children, className = "", delay = 0,
 }: {
-  children: React.ReactNode;
-  className?: string;
-  delay?: number;
+  children: React.ReactNode; className?: string; delay?: number;
 }) {
   return (
     <span className={`line-reveal ${className}`}>
