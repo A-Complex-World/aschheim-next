@@ -151,6 +151,26 @@ a, button { cursor: pointer; }
 /* === Section dividers === */
 .rule-h { height: 1px; background: var(--rule); width: 100%; }
 
+/* === Site Nav backdrop === */
+.site-nav { transition: background 0.4s ease; }
+.site-nav-bg {
+  position: absolute; inset: 0;
+  background: linear-gradient(180deg, rgba(10,9,7,0.85) 0%, rgba(10,9,7,0.7) 60%, transparent 100%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+.site-nav.scrolled .site-nav-bg { opacity: 1; }
+.site-nav a, .site-nav .magnetic { mix-blend-mode: difference; }
+.site-nav.scrolled a, .site-nav.scrolled .magnetic { mix-blend-mode: normal; }
+@media (max-width: 768px) {
+  .site-nav a, .site-nav .magnetic { mix-blend-mode: normal; }
+  .site-nav-bg { opacity: 0.6; }
+  .site-nav.scrolled .site-nav-bg { opacity: 1; }
+}
+
 /* === Mobile perf === */
 @media (max-width: 768px) {
   .mask-reveal { clip-path: none; opacity: 1; }

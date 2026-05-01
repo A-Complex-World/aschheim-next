@@ -14,14 +14,19 @@ export default function ScrollEffects() {
     const hideSplash = () => splash?.classList.add("done");
     const splashTimer = window.setTimeout(hideSplash, 1500);
 
-    // Scroll progress
+    // Scroll progress + nav bg
     const progress = document.querySelector<HTMLElement>(".scroll-progress");
+    const nav = document.querySelector<HTMLElement>(".site-nav");
     let ticking = false;
     const updateProgress = () => {
       if (!progress) return;
       const h = document.documentElement;
       const scrolled = h.scrollTop / Math.max(1, h.scrollHeight - h.clientHeight);
       progress.style.transform = `scaleX(${scrolled})`;
+      if (nav) {
+        if (h.scrollTop > 60) nav.classList.add("scrolled");
+        else nav.classList.remove("scrolled");
+      }
       ticking = false;
     };
     const onScroll = () => {

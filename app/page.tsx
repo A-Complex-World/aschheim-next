@@ -8,20 +8,21 @@ export default function Home() {
       <ScrollEffects />
 
       {/* === NAV === */}
-      <nav className="fixed top-0 inset-x-0 z-50 px-6 md:px-10 py-5 flex items-center justify-between mix-blend-difference">
-        <a href="#top" className="font-mono text-[11px] tracking-[0.18em] uppercase text-ink magnetic">
+      <nav className="site-nav fixed top-0 inset-x-0 z-50 px-6 md:px-10 py-5 flex items-center justify-between">
+        <a href="#top" className="font-mono text-[11px] tracking-[0.18em] uppercase text-ink magnetic relative z-10">
           Aschheim<span className="text-accent">.</span>Next
         </a>
-        <div className="hidden md:flex items-center gap-10 font-mono text-[11px] tracking-[0.18em] uppercase">
+        <div className="hidden md:flex items-center gap-10 font-mono text-[11px] tracking-[0.18em] uppercase relative z-10">
           <a href="#vision" className="link-u">Vision</a>
           <a href="#areal" className="link-u">Areal</a>
           <a href="#welten" className="link-u">Welten</a>
           <a href="#daten" className="link-u">Daten</a>
           <a href="#kontakt" className="link-u">Kontakt</a>
         </div>
-        <a href="#kontakt" className="font-mono text-[11px] tracking-[0.18em] uppercase border border-rule px-4 py-2 rounded-full hover:bg-ink hover:text-bg transition-colors">
+        <a href="#kontakt" className="hidden md:inline-flex font-mono text-[11px] tracking-[0.18em] uppercase border border-rule px-4 py-2 rounded-full hover:bg-ink hover:text-bg transition-colors relative z-10">
           Pitch anfordern <span aria-hidden>→</span>
         </a>
+        <div className="site-nav-bg" aria-hidden />
       </nav>
 
       {/* === HERO === */}
@@ -33,7 +34,7 @@ export default function Home() {
             fill priority sizes="100vw"
             className="object-cover"
           />
-          <div className="absolute inset-0" style={{ background: "linear-gradient(180deg, rgba(10,9,7,0.45) 0%, rgba(10,9,7,0.2) 40%, rgba(10,9,7,0.7) 80%, var(--bg) 100%)" }} />
+          <div className="absolute inset-0" style={{ background: "linear-gradient(180deg, rgba(10,9,7,0.55) 0%, rgba(10,9,7,0.25) 35%, rgba(10,9,7,0.85) 75%, var(--bg) 100%)" }} />
         </div>
 
         <div className="relative h-full flex flex-col justify-end px-6 md:px-10 pb-12 md:pb-20">
@@ -178,13 +179,13 @@ export default function Home() {
               </p>
             </div>
             <div className="col-span-12 md:col-span-8 mask-reveal">
-              <div className="relative bg-bg-soft ring-1 ring-rule p-3">
+              <div className="relative bg-[#1c1814] ring-1 ring-rule p-3">
                 <Image
                   src="/site/gesamtareal-plan.jpg"
                   alt="Lageplan Aschheim Next"
                   width={1600} height={1000}
                   className="w-full h-auto object-contain"
-                  style={{ filter: "invert(1) hue-rotate(180deg) brightness(0.95) contrast(0.85)" }}
+                  style={{ filter: "invert(0.92) hue-rotate(180deg) brightness(1.15) contrast(1.05) saturate(0.7)", mixBlendMode: "screen" }}
                 />
               </div>
             </div>
