@@ -1,440 +1,563 @@
 import Image from "next/image";
 import ScrollEffects from "@/components/ScrollEffects";
-import { WordReveal, LineReveal } from "@/components/Reveal";
+import { LineReveal } from "@/components/Reveal";
 
 export default function Home() {
   return (
-    <main className="bg-bg text-ink">
+    <main className="bg-paper text-ink">
       <ScrollEffects />
 
-      {/* === NAV === */}
-      <nav className="site-nav fixed top-0 inset-x-0 z-50 px-6 md:px-10 py-5 flex items-center justify-between">
-        <a href="#top" className="font-mono text-[11px] tracking-[0.18em] uppercase text-ink magnetic relative z-10">
-          Aschheim<span className="text-accent">.</span>Next
-        </a>
-        <div className="hidden md:flex items-center gap-10 font-mono text-[11px] tracking-[0.18em] uppercase relative z-10">
-          <a href="#vision" className="link-u">Vision</a>
-          <a href="#areal" className="link-u">Areal</a>
-          <a href="#welten" className="link-u">Welten</a>
-          <a href="#daten" className="link-u">Daten</a>
-          <a href="#kontakt" className="link-u">Kontakt</a>
+      {/* === TOP BAR === */}
+      <header className="sticky top-0 z-50 bg-paper/85 backdrop-blur-md border-b border-rule">
+        <div className="px-5 md:px-8 py-3 flex items-center justify-between mono text-[10px] tracking-[0.18em] uppercase">
+          <div className="flex items-center gap-6">
+            <span className="font-medium">Steiner Architektur</span>
+            <span className="hidden md:inline text-ink-mute">·</span>
+            <span className="hidden md:inline text-ink-mute">Investorenmappe / 04.2026</span>
+          </div>
+          <span className="text-ink-soft hidden md:inline" data-clock>MUC · 00:00:00</span>
+          <a href="#kontakt" className="link-u text-ink">Kontakt aufnehmen ↗</a>
         </div>
-        <a href="#kontakt" className="hidden md:inline-flex font-mono text-[11px] tracking-[0.18em] uppercase border border-rule px-4 py-2 rounded-full hover:bg-ink hover:text-bg transition-colors relative z-10">
-          Pitch anfordern <span aria-hidden>→</span>
-        </a>
-        <div className="site-nav-bg" aria-hidden />
-      </nav>
+      </header>
 
       {/* === HERO === */}
-      <section id="top" className="relative h-[100svh] w-full overflow-hidden">
-        <div className="absolute inset-0 hero-img">
-          <Image
-            src="/cinema/hero.jpg"
-            alt="Aschheim Next, atmosphärische Luftaufnahme bei Dämmerung"
-            fill priority sizes="100vw"
-            className="object-cover"
-          />
-          <div className="absolute inset-0" style={{ background: "linear-gradient(180deg, rgba(10,9,7,0.55) 0%, rgba(10,9,7,0.25) 35%, rgba(10,9,7,0.85) 75%, var(--bg) 100%)" }} />
+      <section id="top" className="relative px-5 md:px-8 pt-12 md:pt-20 pb-20 md:pb-28 border-b border-rule">
+        <div className="ticker mb-12 md:mb-20">
+          <span>Aschheim Next / Pitch № 01</span>
+          <span className="dash" />
+          <span>48.176° N, 11.713° E</span>
         </div>
 
-        <div className="relative h-full flex flex-col justify-end px-6 md:px-10 pb-12 md:pb-20">
-          <div className="flex items-end justify-between gap-8 mb-12 md:mb-20">
-            <div className="font-mono text-[11px] tracking-[0.18em] uppercase text-ink-soft fade-up">
-              <div>48.176° N · 11.713° E</div>
-              <div>Aschheim · München · DE</div>
-            </div>
-            <div className="font-mono text-[11px] tracking-[0.18em] uppercase text-ink-soft fade-up text-right">
-              <div>Investorenpitch</div>
-              <div>Steiner Architektur · 2026</div>
+        <h1 className="display text-[16vw] md:text-[12.5vw] leading-[0.86] tracking-tight">
+          <LineReveal>Ein Quartier,</LineReveal>
+          <br />
+          <LineReveal delay={150}>das nicht</LineReveal>
+          <br />
+          <LineReveal delay={300} className="italic-soft">verschwindet,</LineReveal>
+          <br />
+          <LineReveal delay={450}>wenn man es</LineReveal>
+          <br />
+          <LineReveal delay={600} className="italic-soft text-accent">betritt.</LineReveal>
+        </h1>
+
+        <div className="grid grid-cols-12 gap-x-4 md:gap-x-6 mt-16 md:mt-24 pt-8 md:pt-10 border-t border-rule">
+          <div className="col-span-12 md:col-span-3 mb-6 md:mb-0">
+            <div className="eyebrow mb-2">Vorhaben</div>
+            <div className="serif text-2xl md:text-3xl leading-tight">
+              Mixed-Use-Quartier <span className="italic-soft">Aschheim Ost</span>
             </div>
           </div>
-
-          <h1 className="display text-[14vw] md:text-[10.5vw] leading-[0.88] max-w-[14ch]">
-            <LineReveal delay={200}>Ein Stück</LineReveal>
-            <br />
-            <LineReveal delay={350} className="text-accent"><span className="display-i">Stadt,</span></LineReveal>
-            <br />
-            <LineReveal delay={500}>das atmet.</LineReveal>
-          </h1>
-
-          <div className="mt-10 flex items-end justify-between gap-8">
-            <p className="max-w-md text-ink-soft text-base md:text-lg leading-relaxed fade-up">
-              Wohnen, Sport und Begegnung — verzahnt zu einem Quartier, das nicht nur funktioniert,
-              sondern eine Stimmung erzeugt.
-            </p>
-            <a href="#vision" className="hidden md:flex items-center gap-3 font-mono text-[11px] tracking-[0.18em] uppercase magnetic">
-              <span className="w-12 h-px bg-ink" />
-              Scroll
-            </a>
+          <div className="col-span-12 md:col-span-3 mb-6 md:mb-0">
+            <div className="eyebrow mb-2">Status</div>
+            <div className="mono text-sm leading-relaxed">
+              Konzept &amp; Genehmigungs-<br/>vorbereitung. Investoren-<br/>akquise Q2 2026.
+            </div>
+          </div>
+          <div className="col-span-12 md:col-span-3 mb-6 md:mb-0">
+            <div className="eyebrow mb-2">Programm</div>
+            <div className="mono text-sm leading-relaxed">
+              Wohnen / Padel / Topgolf-<br/>Range / Plätze &amp; Gastronomie
+            </div>
+          </div>
+          <div className="col-span-12 md:col-span-3">
+            <div className="eyebrow mb-2">Volumen</div>
+            <div className="mono text-sm leading-relaxed">
+              ≈ 4,8 ha Areal<br/>
+              ≈ 48.000 m² BGF<br/>
+              ≈ 220 WE
+            </div>
           </div>
         </div>
       </section>
 
-      {/* === MARQUEE === */}
-      <section className="border-y border-rule py-6 overflow-hidden bg-bg-soft">
+      {/* === MARQUEE NUMBERS === */}
+      <section className="border-b border-rule overflow-hidden py-8 md:py-12">
         <div className="marquee">
-          <div className="marquee-track display text-[14vw] md:text-[7vw] leading-none whitespace-nowrap">
+          <div className="marquee-track display text-[10vw] md:text-[6vw] leading-none">
             <span>Wohnen</span>
-            <span className="text-accent">·</span>
-            <span className="display-i">Padel</span>
-            <span className="text-accent">·</span>
+            <span className="text-accent">★</span>
+            <span className="italic-soft">Padel</span>
+            <span className="text-accent">★</span>
             <span>Topgolf</span>
-            <span className="text-accent">·</span>
-            <span className="display-i">Begegnung</span>
-            <span className="text-accent">·</span>
+            <span className="text-accent">★</span>
+            <span className="italic-soft">Plätze</span>
+            <span className="text-accent">★</span>
+            <span>Gastro</span>
+            <span className="text-accent">★</span>
           </div>
-          <div className="marquee-track display text-[14vw] md:text-[7vw] leading-none whitespace-nowrap" aria-hidden>
+          <div className="marquee-track display text-[10vw] md:text-[6vw] leading-none" aria-hidden>
             <span>Wohnen</span>
-            <span className="text-accent">·</span>
-            <span className="display-i">Padel</span>
-            <span className="text-accent">·</span>
+            <span className="text-accent">★</span>
+            <span className="italic-soft">Padel</span>
+            <span className="text-accent">★</span>
             <span>Topgolf</span>
-            <span className="text-accent">·</span>
-            <span className="display-i">Begegnung</span>
-            <span className="text-accent">·</span>
+            <span className="text-accent">★</span>
+            <span className="italic-soft">Plätze</span>
+            <span className="text-accent">★</span>
+            <span>Gastro</span>
+            <span className="text-accent">★</span>
           </div>
         </div>
       </section>
 
-      {/* === MANIFEST / VISION === */}
-      <section id="vision" className="px-6 md:px-10 py-32 md:py-48 max-w-7xl mx-auto">
-        <div className="grid grid-cols-12 gap-x-6 md:gap-x-10">
-          <div className="col-span-12 md:col-span-3 mb-10 md:mb-0">
-            <div className="eyebrow fade-up mb-2">01 — Manifest</div>
+      {/* === MEMO / Vision === */}
+      <section id="memo" className="px-5 md:px-8 py-24 md:py-40 border-b border-rule">
+        <div className="grid grid-cols-12 gap-x-4 md:gap-x-6">
+          <div className="col-span-12 md:col-span-3 mb-12 md:mb-0">
+            <div className="sec-no mb-3">§ 01 / Memorandum</div>
+            <div className="mono text-[10px] tracking-[0.18em] uppercase text-ink-mute leading-relaxed">
+              An: Investorenkreis<br/>
+              Von: Max Steiner<br/>
+              Datum: 21. April 2026<br/>
+              Re: Aschheim Next
+            </div>
           </div>
           <div className="col-span-12 md:col-span-9">
-            <h2 className="display text-[8vw] md:text-[5vw] leading-[0.95] mb-12 md:mb-16">
-              <LineReveal>Das Quartier</LineReveal>{" "}
-              <LineReveal delay={150} className="text-ink-muted"><span className="display-i">der nächsten</span></LineReveal>{" "}
-              <LineReveal delay={300}>Dekade</LineReveal>
-              <LineReveal delay={450} className="text-accent"> beginnt nicht mit dem</LineReveal>{" "}
-              <LineReveal delay={600}><span className="display-i">Was</span>,</LineReveal>{" "}
-              <LineReveal delay={750}>sondern mit dem</LineReveal>{" "}
-              <LineReveal delay={900} className="text-accent"><span className="display-i">Wie es sich anfühlt</span>.</LineReveal>
-            </h2>
-            <div className="grid md:grid-cols-2 gap-10 md:gap-14 max-w-3xl">
-              <p className="text-ink-soft leading-relaxed text-base fade-up">
-                Aschheim Next verbindet hochwertiges Wohnen mit Indoor- und Outdoor-Sport,
-                Gastronomie und öffentlichen Plätzen — auf einem zusammenhängenden Areal
-                am östlichen Rand der Metropolregion München.
-              </p>
-              <p className="text-ink-soft leading-relaxed text-base fade-up">
-                Das Konzept ist eine Antwort auf die Frage, wo Menschen morgen leben wollen:
-                in Strukturen, die Bewegung, Begegnung und Rückzug nicht trennen,
-                sondern in einem Tagesablauf orchestrieren.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
+            <p className="serif text-3xl md:text-[2.4vw] leading-[1.2] mb-12 md:mb-16 max-w-4xl">
+              <LineReveal>Wir bauen kein Quartier, das in einer Powerpoint gut aussieht</LineReveal>{" "}
+              <LineReveal delay={150}>und vor Ort nicht hält.</LineReveal>{" "}
+              <LineReveal delay={300} className="italic-soft text-accent">
+                Wir bauen einen Ort, an dem Menschen morgens joggen,
+              </LineReveal>{" "}
+              <LineReveal delay={450}>nachmittags Padel spielen, abends in einer Bar sitzen</LineReveal>{" "}
+              <LineReveal delay={600} className="italic-soft">und alles davon zu Fuß</LineReveal>{" "}
+              <LineReveal delay={750}>erreichen — innerhalb desselben Areals.</LineReveal>
+            </p>
 
-      {/* === AREAL — Sticky Cinema === */}
-      <section id="areal" className="relative">
-        <div className="px-6 md:px-10 py-16 md:py-24 max-w-7xl mx-auto">
-          <div className="flex items-baseline justify-between mb-8">
-            <div className="eyebrow fade-up">02 — Areal</div>
-            <div className="font-mono text-[11px] tracking-[0.18em] uppercase text-ink-muted fade-up">~ 4,8 ha</div>
-          </div>
-          <h2 className="display text-[10vw] md:text-[7vw] leading-[0.92] mb-14 max-w-[14ch]">
-            <LineReveal>Eine</LineReveal>{" "}
-            <LineReveal delay={150} className="text-accent"><span className="display-i">Adresse</span></LineReveal>,{" "}
-            <br className="hidden md:block" />
-            <LineReveal delay={300}>vier Welten.</LineReveal>
-          </h2>
-        </div>
-
-        <div className="relative w-full h-[100svh] mask-reveal overflow-hidden">
-          <Image
-            src="/cinema/quartier.jpg"
-            alt="Atmosphärische Aufnahme des Quartiers bei Dämmerung"
-            fill sizes="100vw" className="object-cover"
-          />
-          <div className="absolute inset-0" style={{ background: "linear-gradient(180deg, rgba(10,9,7,0.5) 0%, transparent 30%, transparent 70%, rgba(10,9,7,0.85) 100%)" }} />
-          <div className="absolute inset-0 flex items-end p-6 md:p-12">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-x-6 gap-y-8 w-full">
+            <div className="grid md:grid-cols-3 gap-x-6 gap-y-10">
               {[
-                { kpi: "≈ 4,8 ha", label: "Gesamtfläche" },
-                { kpi: "4 Cluster", label: "Wohnen · Sport · Plätze · Gastro" },
-                { kpi: "S-Bahn", label: "S2 Aschheim · 12 Min Zentrum" },
-                { kpi: "Auto", label: "A99 / A94 in 5 Min" },
-              ].map((c, i) => (
-                <div key={i} className="fade-up" style={{ transitionDelay: `${i * 80}ms` }}>
-                  <div className="num text-[12vw] md:text-[3.4vw] mb-2">{c.kpi}</div>
-                  <div className="font-mono text-[10px] tracking-[0.18em] uppercase text-ink-soft">{c.label}</div>
+                {
+                  k: "01",
+                  h: "Mixed-Use ohne Lärm­konflikt",
+                  b: "Wohnen, Sport und Gastronomie sitzen nicht nebeneinander, sondern werden räumlich gestaffelt — der Sport innen und im Westen, das Wohnen im Süden, die Plätze als Puffer.",
+                },
+                {
+                  k: "02",
+                  h: "Bewegung als Standardprogramm",
+                  b: "Padel und Topgolf sind keine Add-ons. Sie sind das Gravitationszentrum, das das Quartier zu mehr macht als zu einem weiteren Wohngebiet am Stadtrand.",
+                },
+                {
+                  k: "03",
+                  h: "Adresse für Aschheim",
+                  b: "Die zentrale Platzfolge ist auch für die Aschheimer Bevölkerung gedacht. Das Quartier zieht Frequenz, statt sie nur zu konsumieren.",
+                },
+              ].map((p, i) => (
+                <div key={i} className="fade-up border-t border-rule pt-5" style={{ transitionDelay: `${i * 80}ms` }}>
+                  <div className="sec-no mb-3 text-ink-soft">{p.k}</div>
+                  <div className="serif text-xl md:text-2xl leading-tight mb-3">{p.h}</div>
+                  <p className="text-ink-soft text-sm leading-relaxed">{p.b}</p>
                 </div>
               ))}
             </div>
           </div>
         </div>
+      </section>
 
-        {/* Plan strip */}
-        <div className="px-6 md:px-10 py-20 md:py-32 max-w-7xl mx-auto">
-          <div className="grid grid-cols-12 gap-x-6 md:gap-x-10 items-start">
-            <div className="col-span-12 md:col-span-4 mb-8 md:mb-0">
-              <div className="eyebrow mb-4 fade-up">Lageplan</div>
-              <p className="text-ink-soft leading-relaxed text-base fade-up max-w-sm">
-                Der Masterplan verzahnt sich mit dem bestehenden Ortsbild Aschheims und öffnet sich nach
-                Süden zur Landschaft. Drei Wohncluster gruppieren sich um eine zentrale Sport- und
-                Begegnungsspange.
-              </p>
-            </div>
-            <div className="col-span-12 md:col-span-8 mask-reveal">
-              <div className="relative bg-[#efece4] ring-1 ring-rule p-4 md:p-6">
+      {/* === STANDORT === */}
+      <section id="standort" className="px-5 md:px-8 py-24 md:py-40 border-b border-rule">
+        <div className="grid grid-cols-12 gap-x-4 md:gap-x-6 items-end mb-12 md:mb-20">
+          <div className="col-span-12 md:col-span-4">
+            <div className="sec-no mb-3">§ 02 / Standort</div>
+            <h2 className="display text-[12vw] md:text-[7vw] leading-[0.92]">
+              <LineReveal>Aschheim,</LineReveal>{" "}
+              <LineReveal delay={150} className="italic-soft text-accent">an der</LineReveal>{" "}
+              <LineReveal delay={300}>Naht.</LineReveal>
+            </h2>
+          </div>
+          <div className="col-span-12 md:col-span-7 md:col-start-6">
+            <p className="serif text-xl md:text-2xl leading-snug fade-up max-w-2xl">
+              Zwischen München, dem Erdinger Moos und der Münchner Schotterebene. <span className="italic-soft text-ink-soft">12 Minuten</span> mit der S2 ins Zentrum, <span className="italic-soft text-ink-soft">5 Minuten</span> auf die A99. Der letzte ruhige Standort, der noch Stadt werden kann, statt Vorstadt zu bleiben.
+            </p>
+          </div>
+        </div>
+
+        <div className="grid grid-cols-12 gap-x-4 md:gap-x-6 items-stretch">
+          <div className="col-span-12 md:col-span-7 mask-reveal">
+            <div className="frame">
+              <div className="relative aspect-[16/10] bg-paper overflow-hidden">
                 <Image
-                  src="/site/gesamtareal-plan.jpg"
-                  alt="Lageplan Aschheim Next"
-                  width={1600} height={1000}
-                  className="w-full h-auto object-contain"
+                  src="/site/map-region.jpg"
+                  alt="Lagekarte München / Aschheim"
+                  fill sizes="(min-width: 768px) 60vw, 100vw"
+                  className="object-contain"
                 />
-                <div className="absolute top-2 right-3 font-mono text-[9px] tracking-[0.2em] uppercase text-[#6b6354]">Plan · Steiner Architektur</div>
+              </div>
+              <div className="flex items-center justify-between mt-3 mono text-[9px] tracking-[0.2em] uppercase text-ink-mute">
+                <span>Fig. 01 — Lagekarte Region</span>
+                <span>1:80.000</span>
               </div>
             </div>
           </div>
-        </div>
-      </section>
-
-      {/* === WELTEN === */}
-      <section id="welten" className="border-t border-rule">
-        <div className="px-6 md:px-10 pt-24 md:pt-40 pb-16 max-w-7xl mx-auto">
-          <div className="eyebrow fade-up mb-4">03 — Vier Welten</div>
-          <h2 className="display text-[10vw] md:text-[6.5vw] leading-[0.92] max-w-[18ch]">
-            <LineReveal>Jedes Cluster ein</LineReveal>{" "}
-            <LineReveal delay={150} className="text-accent"><span className="display-i">eigener Zustand</span></LineReveal>{" "}
-            <LineReveal delay={300}>—</LineReveal>{" "}
-            <LineReveal delay={450}>zusammen ein</LineReveal>{" "}
-            <LineReveal delay={600} className="display-i">Quartier</LineReveal>.
-          </h2>
-        </div>
-
-        {/* World 1 — Wohnen */}
-        <World
-          number="01"
-          title="Wohnen"
-          headline="Holz, Licht, Ruhe."
-          body="Drei Cluster mit ca. 220 Einheiten in mehrgeschossiger Holzhybridbauweise. Vom Kompakt-Apartment für Pendler bis zur Maisonette für Familien — durchgehender Materialkanon, hohe Decken, große Fenster, gemeinschaftliche Höfe."
-          imgs={[
-            { src: "/cinema/wohnen.jpg", w: 7, alt: "Atmosphäre Wohneinheit" },
-            { src: "/cinema/lifestyle.jpg", w: 5, alt: "Lifestyle Cafe" },
-          ]}
-          stats={[
-            { k: "~ 220", l: "Wohneinheiten" },
-            { k: "Holzhybrid", l: "Konstruktion" },
-            { k: "KfW 40", l: "Energiestandard" },
-          ]}
-        />
-
-        <World
-          number="02"
-          title="Padel"
-          headline="Der Sport, der lärmt — gefasst in Glas."
-          body="Sechs Indoor- und vier Outdoor-Plätze, Vereinsbetrieb plus Walk-In. Nachtbetrieb bis 23 Uhr durch akustisch und stadtbildverträglich gefasste Hallen. Café-Lounge mit Blick auf die Plätze."
-          imgs={[
-            { src: "/cinema/padel.jpg", w: 12, alt: "Padel-Plätze bei Nacht" },
-          ]}
-          stats={[
-            { k: "10 Plätze", l: "Indoor & Outdoor" },
-            { k: "23:00", l: "Nachtbetrieb" },
-            { k: "Walk-In", l: "Buchung & Liga" },
-          ]}
-          dark
-        />
-
-        <World
-          number="03"
-          title="Topgolf-Range"
-          headline="Driving Range als Bühne."
-          body="Mehrgeschossige Range mit beleuchteten Bays, Trackman-Targets und Gastro-Galerie. Das Konzept funktioniert ganzjährig — Familien, Firmen-Events, After-Work."
-          imgs={[
-            { src: "/cinema/topgolf.jpg", w: 7, alt: "Topgolf-Range" },
-            { src: "/site/atmosphere-topgolf.jpg", w: 5, alt: "Topgolf Atmosphäre" },
-          ]}
-          stats={[
-            { k: "60 Bays", l: "auf 3 Ebenen" },
-            { k: "Trackman", l: "Echtzeit-Tracking" },
-            { k: "Ganzjahr", l: "beheizt & überdacht" },
-          ]}
-        />
-
-        <World
-          number="04"
-          title="Plätze & Gastro"
-          headline="Die Mitte hält das Quartier."
-          body="Zwei Plätze, drei Gastro-Konzepte vom Bäcker bis zur Brasserie, ein kleiner Hofladen. Hier wird das Quartier zur Adresse — auch für Aschheim selbst, nicht nur für Bewohner."
-          imgs={[
-            { src: "/site/atmosphere-quarter.jpg", w: 12, alt: "Quartiersplatz" },
-          ]}
-          stats={[
-            { k: "2 Plätze", l: "öffentlicher Raum" },
-            { k: "3 Konzepte", l: "Gastro & Handel" },
-            { k: "300+", l: "Sitzplätze außen" },
-          ]}
-          dark
-        />
-      </section>
-
-      {/* === DATEN === */}
-      <section id="daten" className="px-6 md:px-10 py-32 md:py-44 max-w-7xl mx-auto border-t border-rule">
-        <div className="grid grid-cols-12 gap-x-6 md:gap-x-10">
-          <div className="col-span-12 md:col-span-4 mb-12 md:mb-0">
-            <div className="eyebrow fade-up mb-4">04 — Eckdaten</div>
-            <h2 className="display text-[10vw] md:text-[5vw] leading-[0.95]">
-              <LineReveal>Das Projekt</LineReveal>{" "}
-              <LineReveal delay={150} className="text-accent display-i">in Zahlen.</LineReveal>
-            </h2>
-          </div>
-          <div className="col-span-12 md:col-span-8 grid grid-cols-2 md:grid-cols-3 gap-x-6 gap-y-12">
+          <div className="col-span-12 md:col-span-5 grid grid-cols-2 gap-x-3 gap-y-8 md:gap-y-10 mt-10 md:mt-0">
             {[
-              { k: "≈ 48.000 m²", l: "Bruttogeschossfläche" },
-              { k: "≈ 4,8 ha", l: "Grundstücksfläche" },
-              { k: "220", l: "Wohneinheiten" },
-              { k: "10", l: "Padel-Plätze" },
-              { k: "60", l: "Topgolf-Bays" },
-              { k: "5 Min", l: "S-Bahn → München" },
-              { k: "KfW 40", l: "Energiestandard" },
-              { k: "2027", l: "Baubeginn (geplant)" },
-              { k: "2030", l: "Fertigstellung (geplant)" },
-            ].map((c, i) => (
-              <div key={i} className="fade-up border-t border-rule pt-4" style={{ transitionDelay: `${(i % 6) * 60}ms` }}>
-                <div className="num text-[10vw] md:text-[3.2vw] mb-2">{c.k}</div>
-                <div className="font-mono text-[10px] tracking-[0.18em] uppercase text-ink-muted">{c.l}</div>
+              { k: "12", u: "Min", l: "S2 → München Hbf" },
+              { k: "5", u: "Min", l: "A99 / A94 Auffahrt" },
+              { k: "27", u: "Min", l: "Flughafen München" },
+              { k: "≈ 9 k", u: "EW", l: "Aschheim &amp; Dornach" },
+              { k: "1,7", u: "Mio", l: "Metropolregion" },
+              { k: "Ø 3,1", u: "%", l: "Bevölkerungs-Wachstum p. a." },
+            ].map((s, i) => (
+              <div key={i} className="fade-up border-t border-rule pt-3" style={{ transitionDelay: `${i * 50}ms` }}>
+                <div className="flex items-baseline gap-2">
+                  <div className="num text-[14vw] md:text-[5vw]">{s.k}</div>
+                  <div className="mono text-xs text-ink-soft">{s.u}</div>
+                </div>
+                <div className="mono text-[10px] tracking-[0.16em] uppercase text-ink-soft mt-2" dangerouslySetInnerHTML={{__html: s.l}} />
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* === BIG QUOTE === */}
-      <section className="relative h-[80svh] w-full overflow-hidden border-t border-rule">
-        <Image
-          src="/cinema/context.jpg"
-          alt="Bayerische Landschaft im Morgennebel"
-          fill sizes="100vw" className="object-cover hero-img"
-        />
-        <div className="absolute inset-0" style={{ background: "linear-gradient(180deg, rgba(10,9,7,0.7) 0%, rgba(10,9,7,0.4) 50%, rgba(10,9,7,0.85) 100%)" }} />
-        <div className="absolute inset-0 flex items-center justify-center px-6 md:px-10">
-          <p className="display text-[8vw] md:text-[4vw] leading-[1.05] max-w-[20ch] text-center">
-            <LineReveal>„Wir bauen kein</LineReveal>{" "}
-            <LineReveal delay={150} className="text-accent display-i">Bauprojekt</LineReveal>.{" "}
-            <LineReveal delay={300}>Wir bauen ein</LineReveal>{" "}
-            <LineReveal delay={450} className="display-i">Stück Stadt</LineReveal>{" "}
-            <LineReveal delay={600}>für die nächste Generation."</LineReveal>
-          </p>
+      {/* === MASTER PLAN === */}
+      <section id="masterplan" className="px-5 md:px-8 py-24 md:py-40 border-b border-rule">
+        <div className="grid grid-cols-12 gap-x-4 md:gap-x-6 mb-12 md:mb-20 items-end">
+          <div className="col-span-12 md:col-span-7">
+            <div className="sec-no mb-3">§ 03 / Masterplan</div>
+            <h2 className="display text-[12vw] md:text-[8vw] leading-[0.9]">
+              <LineReveal>Eine Adresse,</LineReveal>
+              <br/>
+              <LineReveal delay={150} className="italic-soft text-accent">vier</LineReveal>{" "}
+              <LineReveal delay={300}>Welten.</LineReveal>
+            </h2>
+          </div>
+          <div className="col-span-12 md:col-span-5 mt-8 md:mt-0">
+            <p className="text-ink-soft leading-relaxed text-base fade-up">
+              Drei Wohncluster im Süden, eine Sport- und Freizeitspange im Norden, dazwischen zwei Plätze, die das Quartier mit Aschheim verzahnen. Die Topgolf-Range markiert die Adresse von der A99 aus — sichtbar, eindeutig, einprägsam.
+            </p>
+          </div>
         </div>
-        <div className="absolute bottom-8 left-0 right-0 text-center font-mono text-[11px] tracking-[0.18em] uppercase text-ink-soft fade-up">
-          Steiner Architektur · Aschheim Next · 2026
+
+        <div className="mask-reveal frame">
+          <div className="relative aspect-[16/10] md:aspect-[16/8] bg-paper overflow-hidden">
+            <Image
+              src="/site/gesamtareal-plan.jpg"
+              alt="Lageplan Aschheim Next"
+              fill sizes="100vw"
+              className="object-contain"
+              priority
+            />
+          </div>
+          <div className="flex items-center justify-between mt-3 mono text-[9px] tracking-[0.2em] uppercase text-ink-mute">
+            <span>Fig. 02 — Gesamtareal Lageplan</span>
+            <span>1:2.000</span>
+          </div>
+        </div>
+
+        {/* Programm-Tabelle */}
+        <div className="mt-16 md:mt-24">
+          <div className="hr-strong mb-8" />
+          <div className="grid grid-cols-12 gap-x-4 md:gap-x-6 mono text-[10px] tracking-[0.16em] uppercase text-ink-mute pb-3 border-b border-rule">
+            <div className="col-span-1">№</div>
+            <div className="col-span-4">Cluster</div>
+            <div className="col-span-3">Programm</div>
+            <div className="col-span-2">BGF / Nutzung</div>
+            <div className="col-span-2 text-right">Anteil</div>
+          </div>
+          {[
+            { n: "01", c: "Wohnen Süd I–III", p: "Holzhybrid, Maisonette + Apartments", g: "≈ 22.000 m²", a: "46 %" },
+            { n: "02", c: "Sport-Spange Nord", p: "Padel-Halle, Outdoor-Plätze, Lounge", g: "≈ 7.500 m²", a: "16 %" },
+            { n: "03", c: "Topgolf-Range Ost", p: "60 Bays, drei Ebenen, Gastro-Galerie", g: "≈ 11.000 m²", a: "23 %" },
+            { n: "04", c: "Plätze &amp; Gastro Mitte", p: "Bäcker, Brasserie, Hofladen, Kita", g: "≈ 7.500 m²", a: "15 %" },
+          ].map((row, i) => (
+            <div key={i} className="fade-up grid grid-cols-12 gap-x-4 md:gap-x-6 py-5 md:py-7 border-b border-rule items-baseline" style={{ transitionDelay: `${i * 60}ms` }}>
+              <div className="col-span-1 sec-no text-ink-soft">{row.n}</div>
+              <div className="col-span-12 md:col-span-4 serif text-2xl md:text-3xl mt-1 md:mt-0" dangerouslySetInnerHTML={{__html: row.c}} />
+              <div className="col-span-8 md:col-span-3 mono text-xs md:text-sm text-ink-soft leading-snug mt-2 md:mt-0" dangerouslySetInnerHTML={{__html: row.p}} />
+              <div className="col-span-4 md:col-span-2 mono text-xs md:text-sm text-ink-soft leading-snug mt-2 md:mt-0">{row.g}</div>
+              <div className="col-span-12 md:col-span-2 num text-[10vw] md:text-[3.5vw] text-right mt-2 md:mt-0">{row.a}</div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* === Bauteile === */}
+      <Cluster
+        no="§ 04"
+        kicker="Cluster I"
+        title="Wohnen"
+        statement={<>
+          <LineReveal>Holzhybrid, drei Höfe,</LineReveal>{" "}
+          <LineReveal delay={150} className="italic-soft text-accent">eine ruhige Hand.</LineReveal>
+        </>}
+        body="Drei Wohncluster mit ca. 220 Einheiten in mehrgeschossiger Holzhybridbauweise — Pendler-Apartment bis Maisonette, einheitlicher Materialkanon, hohe Decken, große Fenster, gemeinschaftliche Höfe. KfW-40-Standard, dezentrale Wärmepumpe, Photovoltaik auf den Flachdächern."
+        figures={[
+          { src: "/site/atmosphere-wohnen.jpg", alt: "Atmosphäre Wohnen, Innenraum", cap: "Fig. 03 — Innenraum, Maisonette" },
+          { src: "/site/wohnen-refs.jpg", alt: "Wohnen, Referenzen", cap: "Fig. 04 — Material- & Stilreferenzen" },
+        ]}
+        rows={[
+          ["WE gesamt", "≈ 220"],
+          ["BGF Wohnen", "≈ 22.000 m²"],
+          ["Konstruktion", "Holz-Hybrid"],
+          ["Energiestandard", "KfW 40"],
+          ["Stellplätze", "Tiefgarage 1,2 / WE"],
+        ]}
+      />
+
+      <Cluster
+        no="§ 05"
+        kicker="Cluster II"
+        title="Padel"
+        statement={<>
+          <LineReveal>Der Sport,</LineReveal>{" "}
+          <LineReveal delay={150} className="italic-soft text-accent">der lärmt</LineReveal>{" "}
+          <LineReveal delay={300}>— gefasst in Glas.</LineReveal>
+        </>}
+        body="Sechs Indoor- plus vier Outdoor-Plätze, Vereinsbetrieb plus Walk-In. Die akustisch und stadtbildverträglich gefassten Hallen erlauben Nachtbetrieb bis 23 Uhr. Café-Lounge mit direktem Blick auf die Plätze, Pro-Shop, Eventfläche."
+        figures={[
+          { src: "/site/atmosphere-padel.jpg", alt: "Atmosphäre Padel-Halle", cap: "Fig. 05 — Innen, Padel-Halle" },
+          { src: "/site/padel-refs.jpg", alt: "Padel Referenzen", cap: "Fig. 06 — Referenzen Padel" },
+        ]}
+        rows={[
+          ["Plätze", "10 (6 Indoor / 4 Outdoor)"],
+          ["Betriebszeit", "07:00–23:00"],
+          ["Mitglieder Ziel", "≈ 1.200"],
+          ["Walk-In Slot", "60 Min · 9 €/Person"],
+          ["Eventfläche", "≈ 280 m²"],
+        ]}
+        flip
+      />
+
+      <Cluster
+        no="§ 06"
+        kicker="Cluster III"
+        title="Topgolf-Range"
+        statement={<>
+          <LineReveal>Die</LineReveal>{" "}
+          <LineReveal delay={150} className="italic-soft">Driving-Range</LineReveal>{" "}
+          <LineReveal delay={300} className="text-accent">als Bühne.</LineReveal>
+        </>}
+        body="Mehrgeschossige Range mit beleuchteten Bays, Trackman-Targets und Gastronomie-Galerie. Ganzjahresbetrieb durch Beheizung und Überdachung, Familien-Bays, Firmen-Events, After-Work-Mini-Tournaments. Sichtbar von der A99 — die Adresse des Quartiers."
+        figures={[
+          { src: "/site/atmosphere-topgolf.jpg", alt: "Atmosphäre Topgolf-Range", cap: "Fig. 07 — Range, Innenansicht" },
+          { src: "/site/topgolf-refs.jpg", alt: "Topgolf Referenzen", cap: "Fig. 08 — Referenzen Range" },
+        ]}
+        rows={[
+          ["Bays", "60 auf 3 Ebenen"],
+          ["Tracking", "Trackman Range"],
+          ["Bewirtschaftung", "Ganzjahr · beheizt"],
+          ["Bars / Galerie", "≈ 600 m²"],
+          ["Events", "Firmen, Junggesellen, Mini-Turniere"],
+        ]}
+      />
+
+      <Cluster
+        no="§ 07"
+        kicker="Cluster IV"
+        title="Plätze & Gastro"
+        statement={<>
+          <LineReveal>Die Mitte hält</LineReveal>{" "}
+          <LineReveal delay={150} className="italic-soft text-accent">das Quartier.</LineReveal>
+        </>}
+        body="Zwei Plätze, drei Gastro-Konzepte vom Bäcker bis zur Brasserie, ein Hofladen, eine Kita. Hier wird das Quartier zur Adresse — auch für Aschheim selbst, nicht nur für Bewohner. Wochenmarkt-Fläche, Open-Air-Kino im Sommer, kleine Sport-Wettkämpfe."
+        figures={[
+          { src: "/site/atmosphere-quarter.jpg", alt: "Atmosphäre Quartiersplatz", cap: "Fig. 09 — Quartiersplatz Mitte" },
+          { src: "/site/padel-lifestyle.jpg", alt: "Lifestyle Quartier", cap: "Fig. 10 — Stimmung Tageszeit" },
+        ]}
+        rows={[
+          ["Plätze", "2 (Markt, Innenhof)"],
+          ["Gastro-Slots", "3 + 1 Bäcker"],
+          ["Sitzplätze außen", "≈ 300"],
+          ["Kita-Plätze", "≈ 80"],
+          ["Veranstaltungen p.a.", "≈ 30"],
+        ]}
+        flip
+      />
+
+      {/* === KENNZAHLEN === */}
+      <section id="zahlen" className="px-5 md:px-8 py-24 md:py-40 border-b border-rule">
+        <div className="sec-no mb-3">§ 08 / Eckdaten</div>
+        <h2 className="display text-[14vw] md:text-[10vw] leading-[0.88] mb-16 md:mb-24">
+          <LineReveal>Das</LineReveal>{" "}
+          <LineReveal delay={150}>Projekt</LineReveal>
+          <br/>
+          <LineReveal delay={300} className="italic-soft text-accent">in Zahlen.</LineReveal>
+        </h2>
+        <div className="grid grid-cols-12 gap-x-4 md:gap-x-6">
+          {[
+            { k: "≈ 4,8", u: "ha", l: "Grundstücksfläche" },
+            { k: "≈ 48.000", u: "m²", l: "Bruttogeschossfläche" },
+            { k: "220", u: "WE", l: "Wohneinheiten" },
+            { k: "10", u: "Plätze", l: "Padel Indoor + Outdoor" },
+            { k: "60", u: "Bays", l: "Topgolf-Range" },
+            { k: "KfW", u: "40", l: "Energiestandard Wohnen" },
+            { k: "S2", u: "12 Min", l: "→ München Hbf" },
+            { k: "2027", u: "Ziel", l: "Baubeginn" },
+            { k: "2030", u: "Ziel", l: "Fertigstellung" },
+          ].map((s, i) => (
+            <div key={i} className="col-span-12 md:col-span-4 fade-up border-t border-rule py-8 md:py-10" style={{ transitionDelay: `${(i % 3) * 60}ms` }}>
+              <div className="flex items-baseline gap-3 mb-3">
+                <div className="num text-[18vw] md:text-[7vw]">{s.k}</div>
+                <div className="mono text-xs md:text-sm text-ink-soft">{s.u}</div>
+              </div>
+              <div className="mono text-[10px] tracking-[0.18em] uppercase text-ink-soft">{s.l}</div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* === ROADMAP === */}
+      <section id="roadmap" className="px-5 md:px-8 py-24 md:py-40 border-b border-rule">
+        <div className="grid grid-cols-12 gap-x-4 md:gap-x-6 items-end mb-16">
+          <div className="col-span-12 md:col-span-5">
+            <div className="sec-no mb-3">§ 09 / Roadmap</div>
+            <h2 className="display text-[12vw] md:text-[7vw] leading-[0.92]">
+              <LineReveal>Vom Plan</LineReveal>{" "}
+              <LineReveal delay={150} className="italic-soft text-accent">zur Adresse.</LineReveal>
+            </h2>
+          </div>
+          <div className="col-span-12 md:col-span-6 md:col-start-7 mt-8 md:mt-0">
+            <p className="text-ink-soft leading-relaxed text-base fade-up max-w-md">
+              Das Vorhaben wird in zwei Bauabschnitten realisiert. Phase 1 öffnet die Sport-Spange und das Topgolf-Modul — sie tragen die Adresse, bevor die Wohncluster fertiggestellt werden.
+            </p>
+          </div>
+        </div>
+
+        <div className="hr-strong mb-0" />
+        {[
+          { y: "2026", q: "Q2–Q4", t: "Investorenakquise & Genehmigungsverfahren", b: "Pitch-Deck, Wirtschaftlichkeit, Vorbescheid, BBauG-Verfahren mit Gemeinde Aschheim." },
+          { y: "2027", q: "Q1–Q4", t: "Baubeginn Phase 1: Sport-Spange + Topgolf", b: "Padel-Halle, Outdoor-Plätze, Topgolf-Range. Eröffnung Phase 1 Q3 2028." },
+          { y: "2028", q: "Q3", t: "Baubeginn Phase 2: Wohnen + Plätze", b: "Wohncluster Süd I–III, Plätze und Gastronomie. Bezug ab Q3 2030." },
+          { y: "2030", q: "Q3", t: "Quartier vollständig in Betrieb", b: "Plätze, Gastronomie, Kita, Sport, Wohnen — gemeinsam." },
+        ].map((r, i) => (
+          <div key={i} className="fade-up grid grid-cols-12 gap-x-4 md:gap-x-6 py-8 md:py-10 border-b border-rule items-baseline" style={{ transitionDelay: `${i * 80}ms` }}>
+            <div className="col-span-3 md:col-span-2 num text-[12vw] md:text-[5vw]">{r.y}</div>
+            <div className="col-span-9 md:col-span-2 mono text-[10px] tracking-[0.18em] uppercase text-ink-soft pt-3 md:pt-5">{r.q}</div>
+            <div className="col-span-12 md:col-span-8 mt-3 md:mt-0">
+              <div className="serif text-2xl md:text-3xl mb-2">{r.t}</div>
+              <p className="text-ink-soft text-sm md:text-base leading-relaxed max-w-2xl">{r.b}</p>
+            </div>
+          </div>
+        ))}
+      </section>
+
+      {/* === BIG STATEMENT === */}
+      <section className="px-5 md:px-8 py-32 md:py-56 border-b border-rule">
+        <p className="display text-[10vw] md:text-[6.5vw] leading-[1.02] max-w-[18ch] mx-auto text-center">
+          <LineReveal>„Wir bauen kein</LineReveal>{" "}
+          <LineReveal delay={150} className="italic-soft">Bauprojekt</LineReveal>.{" "}
+          <LineReveal delay={300}>Wir bauen ein</LineReveal>{" "}
+          <LineReveal delay={450} className="italic-soft text-accent">Stück Stadt</LineReveal>{" "}
+          <LineReveal delay={600}>für die nächste</LineReveal>{" "}
+          <LineReveal delay={750}>Generation."</LineReveal>
+        </p>
+        <div className="mono text-[10px] tracking-[0.18em] uppercase text-ink-soft text-center mt-12 fade-up">
+          Max Steiner · Geschäftsführer · Steiner Architektur GmbH
         </div>
       </section>
 
       {/* === KONTAKT === */}
-      <section id="kontakt" className="px-6 md:px-10 py-32 md:py-48 max-w-7xl mx-auto">
-        <div className="grid grid-cols-12 gap-x-6 md:gap-x-10 items-end">
+      <section id="kontakt" className="px-5 md:px-8 py-24 md:py-40 border-b border-rule">
+        <div className="grid grid-cols-12 gap-x-4 md:gap-x-6 items-end">
           <div className="col-span-12 md:col-span-7 mb-12 md:mb-0">
-            <div className="eyebrow fade-up mb-6">05 — Investorenpitch</div>
-            <h2 className="display text-[12vw] md:text-[7vw] leading-[0.92]">
+            <div className="sec-no mb-3">§ 10 / Pitch anfordern</div>
+            <h2 className="display text-[14vw] md:text-[8.5vw] leading-[0.9]">
               <LineReveal>Werden Sie</LineReveal>
-              <br />
-              <LineReveal delay={200} className="text-accent display-i">Teil der</LineReveal>
-              <br />
-              <LineReveal delay={400}>Geschichte.</LineReveal>
+              <br/>
+              <LineReveal delay={150} className="italic-soft text-accent">Teil der</LineReveal>{" "}
+              <LineReveal delay={300}>Geschichte.</LineReveal>
             </h2>
           </div>
           <div className="col-span-12 md:col-span-5">
             <p className="text-ink-soft leading-relaxed text-base mb-10 fade-up max-w-md">
-              Vollständige Pitch-Unterlagen, Wirtschaftlichkeitsrechnung und Realisierungsplan
-              auf vertraulicher Basis. Sprechen Sie uns an.
+              Vollständiges Pitch-Deck, Wirtschaftlichkeitsrechnung und Realisierungsplan auf vertraulicher Basis. Wir freuen uns auf das Gespräch.
             </p>
-            <div className="space-y-6 fade-up">
-              <a href="mailto:next@steiner-architektur.de" className="block group">
-                <div className="font-mono text-[10px] tracking-[0.18em] uppercase text-ink-muted mb-1">E-Mail</div>
-                <div className="display text-[7vw] md:text-[2.4vw] link-u">next@steiner-architektur.de</div>
-              </a>
-              <a href="tel:+4989000000000" className="block group">
-                <div className="font-mono text-[10px] tracking-[0.18em] uppercase text-ink-muted mb-1">Telefon</div>
-                <div className="display text-[7vw] md:text-[2.4vw] link-u">+49 89 000 000 00</div>
-              </a>
+            <div className="space-y-5 fade-up">
+              <div className="border-t border-rule pt-4">
+                <div className="mono text-[10px] tracking-[0.18em] uppercase text-ink-mute mb-1">E-Mail</div>
+                <a href="mailto:next@steiner-architektur.de" className="serif text-2xl md:text-3xl leading-tight link-u">next@steiner-architektur.de</a>
+              </div>
+              <div className="border-t border-rule pt-4">
+                <div className="mono text-[10px] tracking-[0.18em] uppercase text-ink-mute mb-1">Telefon</div>
+                <a href="tel:+4989000000000" className="serif text-2xl md:text-3xl leading-tight link-u">+49 89 000 000 00</a>
+              </div>
+              <div className="border-t border-rule pt-4">
+                <div className="mono text-[10px] tracking-[0.18em] uppercase text-ink-mute mb-1">Adresse</div>
+                <div className="serif text-xl leading-snug">
+                  Steiner Architektur GmbH<br/>
+                  Musterstraße 1, 80333 München
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
       {/* === FOOTER === */}
-      <footer className="border-t border-rule px-6 md:px-10 py-10 max-w-7xl mx-auto">
-        <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6 font-mono text-[11px] tracking-[0.18em] uppercase text-ink-muted">
-          <div>© 2026 Steiner Architektur</div>
+      <footer className="px-5 md:px-8 py-10">
+        <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6 mono text-[10px] tracking-[0.18em] uppercase text-ink-soft">
+          <div>© 2026 Steiner Architektur GmbH</div>
           <div className="flex items-center gap-6">
             <a href="/impressum" className="link-u">Impressum</a>
             <a href="/datenschutz" className="link-u">Datenschutz</a>
           </div>
-          <div>Aschheim Next · v2.0</div>
+          <div>Aschheim Next · v3.0 · Investorenmappe</div>
         </div>
       </footer>
     </main>
   );
 }
 
-function spanClass(n: number) {
-  // tailwind safelist: keep these literal so JIT picks them up
-  const map: Record<number, string> = {
-    4: "md:col-span-4",
-    5: "md:col-span-5",
-    6: "md:col-span-6",
-    7: "md:col-span-7",
-    8: "md:col-span-8",
-    12: "md:col-span-12",
-  };
-  return map[n] ?? "md:col-span-12";
-}
-
-function World({
-  number, title, headline, body, imgs, stats, dark = false,
+function Cluster({
+  no, kicker, title, statement, body, figures, rows, flip = false,
 }: {
-  number: string;
+  no: string;
+  kicker: string;
   title: string;
-  headline: string;
+  statement: React.ReactNode;
   body: string;
-  imgs: { src: string; w: number; alt: string }[];
-  stats: { k: string; l: string }[];
-  dark?: boolean;
+  figures: { src: string; alt: string; cap: string }[];
+  rows: [string, string][];
+  flip?: boolean;
 }) {
   return (
-    <div className={`relative ${dark ? "bg-bg-soft" : ""} border-t border-rule`}>
-      <div className="px-6 md:px-10 py-24 md:py-40 max-w-7xl mx-auto">
-        <div className="grid grid-cols-12 gap-x-6 md:gap-x-10 mb-16">
-          <div className="col-span-12 md:col-span-4 mb-8 md:mb-0">
-            <div className="eyebrow mb-4 fade-up">{number} — {title}</div>
-            <h3 className="display text-[10vw] md:text-[4vw] leading-[0.95]">
-              <LineReveal>{headline.split(" ").slice(0, Math.ceil(headline.split(" ").length / 2)).join(" ")}</LineReveal>
-              <br />
-              <LineReveal delay={200} className="text-accent display-i">
-                {headline.split(" ").slice(Math.ceil(headline.split(" ").length / 2)).join(" ")}
-              </LineReveal>
-            </h3>
+    <section className="px-5 md:px-8 py-24 md:py-40 border-b border-rule">
+      <div className="grid grid-cols-12 gap-x-4 md:gap-x-6 items-baseline mb-12 md:mb-16">
+        <div className={`col-span-12 md:col-span-5 ${flip ? "md:order-2 md:col-start-8" : ""}`}>
+          <div className="sec-no mb-3">{no} / {kicker}</div>
+          <h2 className="display text-[14vw] md:text-[9vw] leading-[0.9]">{title}</h2>
+        </div>
+        <div className={`col-span-12 md:col-span-6 mt-6 md:mt-0 ${flip ? "md:order-1" : "md:col-start-7"}`}>
+          <p className="serif text-2xl md:text-[2vw] leading-snug max-w-xl">{statement}</p>
+        </div>
+      </div>
+
+      <div className="grid grid-cols-12 gap-x-4 md:gap-x-6">
+        <div className={`col-span-12 md:col-span-7 grid grid-cols-12 gap-3 md:gap-4 ${flip ? "md:order-2" : ""}`}>
+          <div className="col-span-12 md:col-span-7 mask-reveal">
+            <div className="frame">
+              <div className="relative aspect-[4/5] md:aspect-[4/5] overflow-hidden">
+                <Image src={figures[0].src} alt={figures[0].alt} fill sizes="(min-width: 768px) 35vw, 100vw" className="object-cover" />
+              </div>
+              <div className="flex items-center justify-between mt-3 mono text-[9px] tracking-[0.2em] uppercase text-ink-mute">
+                <span>{figures[0].cap}</span>
+              </div>
+            </div>
           </div>
-          <div className="col-span-12 md:col-span-7 md:col-start-6">
-            <p className="text-ink-soft leading-relaxed text-base md:text-lg fade-up max-w-2xl">
-              {body}
-            </p>
-            <div className="grid grid-cols-3 gap-6 mt-12">
-              {stats.map((s, i) => (
-                <div key={i} className="fade-up border-t border-rule pt-4" style={{ transitionDelay: `${i * 80}ms` }}>
-                  <div className="num text-[7vw] md:text-[2.2vw] mb-1">{s.k}</div>
-                  <div className="font-mono text-[10px] tracking-[0.18em] uppercase text-ink-muted">{s.l}</div>
-                </div>
-              ))}
+          <div className="col-span-12 md:col-span-5 mask-reveal md:mt-16">
+            <div className="frame">
+              <div className="relative aspect-[4/5] overflow-hidden">
+                <Image src={figures[1].src} alt={figures[1].alt} fill sizes="(min-width: 768px) 25vw, 100vw" className="object-cover" />
+              </div>
+              <div className="flex items-center justify-between mt-3 mono text-[9px] tracking-[0.2em] uppercase text-ink-mute">
+                <span>{figures[1].cap}</span>
+              </div>
             </div>
           </div>
         </div>
 
-        <div className="grid grid-cols-12 gap-x-6 md:gap-x-10">
-          {imgs.map((img, i) => (
-            <div key={i} className={`col-span-12 mask-reveal ${spanClass(img.w)}`}>
-              <div className="relative aspect-[16/10] md:aspect-[16/11] overflow-hidden">
-                <Image src={img.src} alt={img.alt} fill sizes={`(min-width: 768px) ${(img.w / 12) * 100}vw, 100vw`} className="object-cover" />
+        <div className={`col-span-12 md:col-span-4 ${flip ? "md:order-1 md:col-start-1" : "md:col-start-9"} mt-12 md:mt-0`}>
+          <p className="text-ink-soft leading-relaxed text-base mb-10 fade-up max-w-md">{body}</p>
+          <div className="border-t border-rule">
+            {rows.map(([k, v], i) => (
+              <div key={i} className="grid grid-cols-12 py-4 border-b border-rule fade-up" style={{ transitionDelay: `${i * 50}ms` }}>
+                <div className="col-span-5 mono text-[10px] tracking-[0.16em] uppercase text-ink-mute self-center">{k}</div>
+                <div className="col-span-7 serif text-base md:text-lg" dangerouslySetInnerHTML={{__html: v}} />
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 }
