@@ -35,8 +35,9 @@ export default function Home() {
         <div className="max-w-[1600px] mx-auto">
           <div className="flex flex-wrap items-center gap-3 mb-10 md:mb-14 fade-up">
             <span className="pill"><span className="dot" />Investorenpitch / Q2 2026</span>
-            <span className="pill" style={{background:"transparent"}}>48.176° N · 11.713° E</span>
-            <span className="pill" style={{background:"transparent"}}>Aschheim · München · DE</span>
+            <span className="pill" style={{background:"transparent"}}>Bauherr: DB Development</span>
+            <span className="pill" style={{background:"transparent"}}>Architektur: Steiner</span>
+            <span className="pill" style={{background:"transparent"}}>Aschheim · München</span>
           </div>
 
           <h1 className="display text-[16vw] md:text-[10.5vw] leading-[0.88] mb-12 md:mb-16">
@@ -127,8 +128,12 @@ export default function Home() {
             <div className="col-span-12 md:col-span-3">
               <span className="pill mb-4"><span className="dot" />01 / Vision</span>
               <p className="mono text-[11px] tracking-[0.14em] uppercase text-ink-mute leading-relaxed">
+                DB Development,<br/>
+                Bauherr · 04.2026
+              </p>
+              <p className="mono text-[11px] tracking-[0.14em] uppercase text-ink-mute leading-relaxed mt-3">
                 Steiner Architektur,<br/>
-                München · 04.2026
+                Architektur · Planung
               </p>
             </div>
             <div className="col-span-12 md:col-span-9">
@@ -412,7 +417,7 @@ export default function Home() {
             <LineReveal delay={600}>Generation."</LineReveal>
           </p>
           <div className="mono text-[11px] tracking-[0.14em] uppercase text-ink-mute mt-12 fade-up">
-            Max Steiner · Geschäftsführer · Steiner Architektur
+            DB Development · Bauherr · Aschheim Next
           </div>
         </div>
       </section>
@@ -423,28 +428,28 @@ export default function Home() {
           <div className="card bg-ink text-sand p-8 md:p-16" style={{borderColor:"transparent"}}>
             <div className="grid grid-cols-12 gap-y-12 gap-x-6 md:gap-x-10 items-end">
               <div className="col-span-12 md:col-span-7">
-                <span className="pill mb-6" style={{background:"rgba(244,237,224,0.08)", borderColor:"rgba(244,237,224,0.18)", color:"var(--sand)"}}>
+                <span className="pill mb-6" style={{background:"rgba(244,237,224,0.1)", borderColor:"rgba(244,237,224,0.3)", color:"var(--sand)"}}>
                   <span className="dot" />07 / Pitch anfordern
                 </span>
-                <h2 className="display text-[12vw] md:text-[7vw] leading-[0.9]">
+                <h2 className="display text-[12vw] md:text-[7vw] leading-[1] text-sand">
                   <LineReveal>Werden Sie</LineReveal>{" "}
                   <LineReveal delay={150} className="text-moss-glow">Teil davon.</LineReveal>
                 </h2>
-                <p className="mt-8 text-base md:text-lg leading-relaxed max-w-md fade-up" style={{color:"rgba(244,237,224,0.7)"}}>
+                <p className="mt-8 text-base md:text-lg leading-relaxed max-w-md fade-up" style={{color:"rgba(244,237,224,0.78)"}}>
                   Vollständiges Pitch-Deck, Wirtschaftlichkeitsrechnung und Realisierungsplan auf vertraulicher Basis. Wir freuen uns auf das Gespräch.
                 </p>
               </div>
               <div className="col-span-12 md:col-span-5 space-y-5">
-                <a href="mailto:next@steiner-architektur.de" className="block fade-up group">
-                  <div className="mono text-[10px] tracking-[0.18em] uppercase mb-2" style={{color:"rgba(244,237,224,0.5)"}}>E-Mail</div>
-                  <div className="display text-2xl md:text-3xl link-u">next@steiner-architektur.de</div>
+                <a href="mailto:next@db-development.de" className="block fade-up group">
+                  <div className="mono text-[10px] tracking-[0.18em] uppercase mb-2" style={{color:"rgba(244,237,224,0.55)"}}>E-Mail · DB Development</div>
+                  <div className="display text-2xl md:text-3xl link-u">next@db-development.de</div>
                 </a>
                 <a href="tel:+4989000000000" className="block fade-up">
-                  <div className="mono text-[10px] tracking-[0.18em] uppercase mb-2" style={{color:"rgba(244,237,224,0.5)"}}>Telefon</div>
+                  <div className="mono text-[10px] tracking-[0.18em] uppercase mb-2" style={{color:"rgba(244,237,224,0.55)"}}>Telefon</div>
                   <div className="display text-2xl md:text-3xl link-u">+49 89 000 000 00</div>
                 </a>
                 <div className="fade-up pt-3">
-                  <a href="mailto:next@steiner-architektur.de?subject=Aschheim Next — Pitch-Anfrage" className="btn btn-moss text-[13px]">
+                  <a href="mailto:next@db-development.de?subject=Aschheim Next — Pitch-Anfrage" className="btn btn-moss text-[13px]">
                     Pitch anfordern
                     <span style={{display:"inline-block", transform:"translateY(-1px)"}}>↗</span>
                   </a>
@@ -458,7 +463,7 @@ export default function Home() {
       {/* === FOOTER === */}
       <footer className="px-4 md:px-6 py-10">
         <div className="max-w-[1600px] mx-auto flex flex-col md:flex-row items-start md:items-center justify-between gap-6 mono text-[10px] tracking-[0.14em] uppercase text-ink-mute">
-          <div>© 2026 Steiner Architektur GmbH</div>
+          <div>© 2026 DB Development GmbH · Architektur: Steiner Architektur</div>
           <div className="flex items-center gap-6">
             <a href="/impressum" className="link-u">Impressum</a>
             <a href="/datenschutz" className="link-u">Datenschutz</a>

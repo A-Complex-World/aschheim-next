@@ -10,7 +10,7 @@
   --line-strong: rgba(15, 14, 10, 0.4);
   --moss: #1f6b3d;
   --moss-deep: #14502c;
-  --moss-glow: #44a366;
+  --moss-glow: #7dd49b;
   --paper: #ffffff;
 }
 
@@ -49,7 +49,7 @@ body {
   font-family: var(--font-display);
   font-weight: 500;
   letter-spacing: -0.04em;
-  line-height: 0.92;
+  line-height: 1;
 }
 .display-light { font-weight: 300; }
 .display-bold { font-weight: 700; }
@@ -98,10 +98,21 @@ body {
 }
 .js-ready .fade-up.in { opacity: 1; transform: translateY(0); }
 
-.line-reveal { display: block; overflow: hidden; }
+.line-reveal {
+  display: inline-block;
+  overflow: hidden;
+  /* extra room for descenders (g, j, p, q, y) and ascenders */
+  padding-bottom: 0.18em;
+  margin-bottom: -0.18em;
+  padding-top: 0.06em;
+  vertical-align: top;
+  line-height: inherit;
+}
 .line-reveal > span {
-  display: inline-block; transform: translateY(105%);
+  display: inline-block;
+  transform: translateY(110%);
   transition: transform 1s cubic-bezier(0.16, 1, 0.3, 1);
+  line-height: inherit;
 }
 .js-ready .line-reveal.in > span { transform: translateY(0); }
 

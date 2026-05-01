@@ -23,7 +23,7 @@ const mono = JetBrains_Mono({
 export const metadata: Metadata = {
   title: "Aschheim Next — Wohnen, Sport, Begegnung",
   description:
-    "Mixed-Use-Quartier am östlichen Münchner Stadtrand. Wohnen, Padel, Topgolf, öffentliche Plätze. Ein Investorenpitch von Steiner Architektur, 2026.",
+    "Mixed-Use-Quartier am östlichen Münchner Stadtrand. Wohnen, Padel, Topgolf, öffentliche Plätze. Ein Investorenpitch von DB Development, Architektur Steiner, 2026.",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
