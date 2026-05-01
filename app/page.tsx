@@ -179,14 +179,14 @@ export default function Home() {
               </p>
             </div>
             <div className="col-span-12 md:col-span-8 mask-reveal">
-              <div className="relative bg-[#1c1814] ring-1 ring-rule p-3">
+              <div className="relative bg-[#efece4] ring-1 ring-rule p-4 md:p-6">
                 <Image
                   src="/site/gesamtareal-plan.jpg"
                   alt="Lageplan Aschheim Next"
                   width={1600} height={1000}
                   className="w-full h-auto object-contain"
-                  style={{ filter: "invert(0.92) hue-rotate(180deg) brightness(1.15) contrast(1.05) saturate(0.7)", mixBlendMode: "screen" }}
                 />
+                <div className="absolute top-2 right-3 font-mono text-[9px] tracking-[0.2em] uppercase text-[#6b6354]">Plan · Steiner Architektur</div>
               </div>
             </div>
           </div>
