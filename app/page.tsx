@@ -10,10 +10,10 @@ export default function Home() {
 
       {/* === NAV === */}
       <header className="fixed top-3 inset-x-3 md:top-4 md:inset-x-6 z-50">
-        <div className="rounded-full border border-line bg-paper/80 backdrop-blur-md px-4 md:px-5 py-2.5 flex items-center justify-between">
-          <a href="#top" className="flex items-center gap-2 font-medium text-[14px] tracking-tight">
+        <div className="rounded-full border border-line bg-paper/85 backdrop-blur-md pl-4 md:pl-5 pr-2 md:pr-2 py-2 flex items-center justify-between gap-3">
+          <a href="#top" className="flex items-center gap-2 font-medium text-[14px] tracking-tight whitespace-nowrap">
             <span className="inline-block w-2 h-2 rounded-full bg-moss" />
-            Aschheim<span className="opacity-60">.next</span>
+            <span>Aschheim<span className="opacity-60">.next</span></span>
           </a>
           <nav className="hidden md:flex items-center gap-8 mono text-[11px] tracking-[0.14em] uppercase text-ink-soft">
             <a href="#vision" className="link-u hover:text-ink">Vision</a>
@@ -22,8 +22,10 @@ export default function Home() {
             <a href="#plan" className="link-u hover:text-ink">Plan</a>
             <a href="#zahlen" className="link-u hover:text-ink">Zahlen</a>
           </nav>
-          <a href="#kontakt" className="btn btn-moss text-[13px] py-2 px-4">
-            Pitch anfordern
+          <a href="#kontakt" className="btn btn-moss text-[12px] md:text-[13px] py-2 px-3 md:px-4 whitespace-nowrap">
+            <span className="hidden sm:inline">Pitch anfordern</span>
+            <span className="sm:hidden">Pitch</span>
+            <span aria-hidden>↗</span>
           </a>
         </div>
       </header>
