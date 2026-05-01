@@ -40,12 +40,12 @@ export default function Home() {
             <span className="pill" style={{background:"transparent"}}>Aschheim · München</span>
           </div>
 
-          <h1 className="display text-[16vw] md:text-[10.5vw] leading-[0.88] mb-12 md:mb-16">
+          <h1 className="display text-[14vw] md:text-[10.5vw] leading-[1] mb-12 md:mb-16">
             <LineReveal>Wohnen, Sport,</LineReveal>
             <br />
-            <LineReveal delay={150}>Begegnung —</LineReveal>
+            <LineReveal delay={150}>Begegnung,</LineReveal>
             <br />
-            <LineReveal delay={300} className="text-moss">in einer Adresse.</LineReveal>
+            <LineReveal delay={300} className="text-moss">eine Adresse.</LineReveal>
           </h1>
 
           <div className="grid grid-cols-12 gap-y-8 gap-x-6 md:gap-x-10 items-end mb-16">
