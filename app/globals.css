@@ -163,6 +163,9 @@ body {
 .tile img { transition: transform 1.6s cubic-bezier(0.16, 1, 0.3, 1); }
 .tile:hover img { transform: scale(1.04); }
 
+/* Editorial photo treatment — only on tagged frames */
+.frame--photo .relative img { filter: contrast(0.95) saturate(0.78) sepia(0.05); }
+
 /* === Hard rule === */
 .hr-strong { height: 1px; background: var(--rule-strong); width: 100%; }
 .hr-soft { height: 1px; background: var(--rule); width: 100%; }

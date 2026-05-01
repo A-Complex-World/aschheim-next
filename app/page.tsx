@@ -191,18 +191,18 @@ export default function Home() {
           <div className="col-span-12 md:col-span-5 grid grid-cols-2 gap-x-3 gap-y-8 md:gap-y-10 mt-10 md:mt-0">
             {[
               { k: "12", u: "Min", l: "S2 → München Hbf" },
-              { k: "5", u: "Min", l: "A99 / A94 Auffahrt" },
+              { k: "05", u: "Min", l: "A99 / A94 Auffahrt" },
               { k: "27", u: "Min", l: "Flughafen München" },
-              { k: "≈ 9 k", u: "EW", l: "Aschheim &amp; Dornach" },
+              { k: "9k", u: "EW", l: "Aschheim &amp; Dornach" },
               { k: "1,7", u: "Mio", l: "Metropolregion" },
-              { k: "Ø 3,1", u: "%", l: "Bevölkerungs-Wachstum p. a." },
+              { k: "3,1", u: "% p.a.", l: "Bevölkerungs-Wachstum" },
             ].map((s, i) => (
               <div key={i} className="fade-up border-t border-rule pt-3" style={{ transitionDelay: `${i * 50}ms` }}>
-                <div className="flex items-baseline gap-2">
-                  <div className="num text-[14vw] md:text-[5vw]">{s.k}</div>
-                  <div className="mono text-xs text-ink-soft">{s.u}</div>
+                <div className="flex items-baseline gap-1.5">
+                  <div className="num text-[14vw] md:text-[5vw] tabular-nums">{s.k}</div>
+                  <div className="mono text-[10px] tracking-[0.14em] uppercase text-ink-soft">{s.u}</div>
                 </div>
-                <div className="mono text-[10px] tracking-[0.16em] uppercase text-ink-soft mt-2" dangerouslySetInnerHTML={{__html: s.l}} />
+                <div className="mono text-[10px] tracking-[0.16em] uppercase text-ink-soft mt-3" dangerouslySetInnerHTML={{__html: s.l}} />
               </div>
             ))}
           </div>
@@ -525,7 +525,7 @@ function Cluster({
       <div className="grid grid-cols-12 gap-x-4 md:gap-x-6">
         <div className={`col-span-12 md:col-span-7 grid grid-cols-12 gap-3 md:gap-4 ${flip ? "md:order-2" : ""}`}>
           <div className="col-span-12 md:col-span-7 mask-reveal">
-            <div className="frame">
+            <div className="frame frame--photo">
               <div className="relative aspect-[4/5] md:aspect-[4/5] overflow-hidden">
                 <Image src={figures[0].src} alt={figures[0].alt} fill sizes="(min-width: 768px) 35vw, 100vw" className="object-cover" />
               </div>
@@ -535,7 +535,7 @@ function Cluster({
             </div>
           </div>
           <div className="col-span-12 md:col-span-5 mask-reveal md:mt-16">
-            <div className="frame">
+            <div className="frame frame--photo">
               <div className="relative aspect-[4/5] overflow-hidden">
                 <Image src={figures[1].src} alt={figures[1].alt} fill sizes="(min-width: 768px) 25vw, 100vw" className="object-cover" />
               </div>
